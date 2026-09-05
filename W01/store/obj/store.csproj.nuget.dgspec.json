@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\WISDOM EFFIONG\\OneDrive\\Desktop\\cse325\\cse325.csproj": {}
+    "C:\\Users\\WISDOM EFFIONG\\OneDrive\\Desktop\\cse325\\W01\\store\\store.csproj": {}
   },
   "projects": {
-    "C:\\Users\\WISDOM EFFIONG\\OneDrive\\Desktop\\cse325\\cse325.csproj": {
+    "C:\\Users\\WISDOM EFFIONG\\OneDrive\\Desktop\\cse325\\W01\\store\\store.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\WISDOM EFFIONG\\OneDrive\\Desktop\\cse325\\cse325.csproj",
-        "projectName": "cse325",
-        "projectPath": "C:\\Users\\WISDOM EFFIONG\\OneDrive\\Desktop\\cse325\\cse325.csproj",
+        "projectUniqueName": "C:\\Users\\WISDOM EFFIONG\\OneDrive\\Desktop\\cse325\\W01\\store\\store.csproj",
+        "projectName": "store",
+        "projectPath": "C:\\Users\\WISDOM EFFIONG\\OneDrive\\Desktop\\cse325\\W01\\store\\store.csproj",
         "packagesPath": "C:\\Users\\WISDOM EFFIONG\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\WISDOM EFFIONG\\OneDrive\\Desktop\\cse325\\obj\\",
+        "outputPath": "C:\\Users\\WISDOM EFFIONG\\OneDrive\\Desktop\\cse325\\W01\\store\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\WISDOM EFFIONG\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

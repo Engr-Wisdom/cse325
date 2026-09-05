@@ -1,0 +1,6 @@
+@cse325_HostAddress = http://localhost:5216
+
+GET {{cse325_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
