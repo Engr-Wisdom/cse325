@@ -1,0 +1,20 @@
+.move-history[b-2hsj6j6moh] {
+    width: min(100%, 500px);
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f5f5f5;
+}
+
+.move-history h2[b-2hsj6j6moh] {
+    margin-top: 0;
+}
+
+.move-history ol[b-2hsj6j6moh] {
+    margin: 0;
+    padding-left: 25px;
+}
+
+.move-history li[b-2hsj6j6moh] {
+    margin-bottom: 6px;
+}

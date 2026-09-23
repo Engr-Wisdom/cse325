@@ -1,0 +1,12 @@
+@page "/FavoritePizzas/{*favorite}"
+
+<h1>Favorite Pizzas</h1>
+
+<p>Your favorite pizza path is: <strong>@Favorite</strong></p>
+
+<NavLink href="/pizzas">Back to Pizzas</NavLink>
+
+@code {
+    [Parameter]
+    public string? Favorite { get; set; }
+}

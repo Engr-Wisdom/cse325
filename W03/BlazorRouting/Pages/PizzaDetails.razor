@@ -1,0 +1,12 @@
+@page "/pizzas/{PizzaName}"
+
+<h1>Pizza Details</h1>
+
+<p>You selected: <strong>@PizzaName</strong></p>
+
+<NavLink href="/pizzas">Back to Pizzas</NavLink>
+
+@code {
+    [Parameter]
+    public string? PizzaName { get; set; }
+}
