@@ -1,20 +1,298 @@
-﻿.move-history {
-    width: min(100%, 500px);
-    margin: 30px auto;
-    padding: 20px;
-    border-radius: 10px;
-    background: #f5f5f5;
+﻿nav {
+    display: flex;
+    width: 30em;
+    margin: 0 auto 1em auto;
+    justify-content: space-around;
+}
+
+nav span {
+    cursor: pointer;
+    font-size: 2em;
+}
+
+article {
+    text-align: center;
+    min-height: 4em;
+}
+
+.alert-danger {
+    display: block;
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.alert-info {
+    display: block;
+    margin-top: 0.5em;
+}
+
+/* =========================================
+   CONNECT FOUR BOARD
+   ========================================= */
+
+div {
+    position: relative;
+}
+
+.board {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(7, 4em);
+    grid-template-rows: repeat(6, 4em);
+
+    width: 30em;
+    height: 26em;
+
+    margin: 0 auto;
+    padding: 1em;
+
+    box-sizing: border-box;
+
+    background-color: var(--board-bg);
+    border-radius: 1em;
+}
+
+/* =========================================
+   EMPTY BOARD CIRCLES
+   ========================================= */
+
+.container {
+    width: 4em;
+    height: 4em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+.container > span {
+    width: 3em;
+    height: 3em;
+
+    display: block;
+
+    border-radius: 50%;
+    background-color: white;
+}
+
+/* =========================================
+   PLAYER PIECES
+   ========================================= */
+
+.player1,
+.player2 {
+    position: absolute;
+
+    width: 3em;
+    height: 3em;
+
+    border-radius: 50%;
+
+    z-index: 2;
+}
+
+.player1 {
+    background-color: var(--player1);
+}
+
+.player2 {
+    background-color: var(--player2);
+}
+
+/* =========================================
+   COLUMN POSITIONING
+   ========================================= */
+
+.col0 {
+    left: 1.5em;
+}
+
+.col1 {
+    left: 5.5em;
+}
+
+.col2 {
+    left: 9.5em;
+}
+
+.col3 {
+    left: 13.5em;
+}
+
+.col4 {
+    left: 17.5em;
+}
+
+.col5 {
+    left: 21.5em;
+}
+
+.col6 {
+    left: 25.5em;
+}
+
+/* =========================================
+   ROW POSITIONING
+   ========================================= */
+
+.drop1 {
+    top: 1.5em;
+}
+
+.drop2 {
+    top: 5.5em;
+}
+
+.drop3 {
+    top: 9.5em;
+}
+
+.drop4 {
+    top: 13.5em;
+}
+
+.drop5 {
+    top: 17.5em;
+}
+
+.drop6 {
+    top: 21.5em;
+}
+
+/* =========================================
+   DROP ANIMATIONS
+   ========================================= */
+
+.drop1 {
+    animation: drop1 0.5s ease-in;
+}
+
+.drop2 {
+    animation: drop2 0.5s ease-in;
+}
+
+.drop3 {
+    animation: drop3 0.5s ease-in;
+}
+
+.drop4 {
+    animation: drop4 0.5s ease-in;
+}
+
+.drop5 {
+    animation: drop5 0.5s ease-in;
+}
+
+.drop6 {
+    animation: drop6 0.5s ease-in;
+}
+
+/* =========================================
+   ANIMATION KEYFRAMES
+   ========================================= */
+
+@keyframes drop1 {
+    from {
+        top: -24em;
+    }
+
+    to {
+        top: 1.5em;
+    }
+}
+
+@keyframes drop2 {
+    from {
+        top: -24em;
+    }
+
+    to {
+        top: 5.5em;
+    }
+}
+
+@keyframes drop3 {
+    from {
+        top: -24em;
+    }
+
+    to {
+        top: 9.5em;
+    }
+}
+
+@keyframes drop4 {
+    from {
+        top: -24em;
+    }
+
+    to {
+        top: 13.5em;
+    }
+}
+
+@keyframes drop5 {
+    from {
+        top: -24em;
+    }
+
+    to {
+        top: 17.5em;
+    }
+}
+
+@keyframes drop6 {
+    from {
+        top: -24em;
+    }
+
+    to {
+        top: 21.5em;
+    }
+}
+
+/* =========================================
+   MOVE HISTORY - ADDITIONAL FEATURE
+   ========================================= */
+
+.move-history {
+    width: 30em;
+    margin: 2em auto 2em auto;
+    padding: 1.5em;
+
+    box-sizing: border-box;
+
+    background-color: #f8f9fa;
+    border-radius: 1em;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    /* Center the contents vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .move-history h2 {
-    margin-top: 0;
+    margin: 0 0 1em 0;
+    text-align: center;
+}
+
+.move-history p {
+    margin: 0;
+    text-align: center;
+    color: #666;
 }
 
 .move-history ol {
     margin: 0;
-    padding-left: 25px;
+    padding-left: 2em;
 }
 
 .move-history li {
-    margin-bottom: 6px;
+    margin-bottom: 0.5em;
+    padding: 0.4em;
 }

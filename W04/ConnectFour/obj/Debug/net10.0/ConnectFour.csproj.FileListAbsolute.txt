@@ -83,5 +83,5 @@ C:\Users\WISDOM EFFIONG\OneDrive\Desktop\cse325\W04\ConnectFour\obj\Debug\net10.
 C:\Users\WISDOM EFFIONG\OneDrive\Desktop\cse325\W04\ConnectFour\obj\Debug\net10.0\ConnectFour.genruntimeconfig.cache
 C:\Users\WISDOM EFFIONG\OneDrive\Desktop\cse325\W04\ConnectFour\obj\Debug\net10.0\ref\ConnectFour.dll
 C:\Users\WISDOM EFFIONG\OneDrive\Desktop\cse325\W04\ConnectFour\obj\Debug\net10.0\scopedcss\Components\Board.razor.rz.scp.css
-C:\Users\WISDOM EFFIONG\OneDrive\Desktop\cse325\W04\ConnectFour\obj\Debug\net10.0\compressed\8t7ubqbmk6-{0}-5p8qdyh3km-5p8qdyh3km.gz
-C:\Users\WISDOM EFFIONG\OneDrive\Desktop\cse325\W04\ConnectFour\obj\Debug\net10.0\compressed\qps0edvuu1-{0}-5p8qdyh3km-5p8qdyh3km.gz
+C:\Users\WISDOM EFFIONG\OneDrive\Desktop\cse325\W04\ConnectFour\obj\Debug\net10.0\compressed\8t7ubqbmk6-{0}-wo59jzr0sn-wo59jzr0sn.gz
+C:\Users\WISDOM EFFIONG\OneDrive\Desktop\cse325\W04\ConnectFour\obj\Debug\net10.0\compressed\qps0edvuu1-{0}-wo59jzr0sn-wo59jzr0sn.gz

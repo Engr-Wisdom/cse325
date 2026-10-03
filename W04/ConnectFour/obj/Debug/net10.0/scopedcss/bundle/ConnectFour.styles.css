@@ -1,23 +1,301 @@
 /* /Components/Board.razor.rz.scp.css */
+nav[b-2hsj6j6moh] {
+    display: flex;
+    width: 30em;
+    margin: 0 auto 1em auto;
+    justify-content: space-around;
+}
+
+nav span[b-2hsj6j6moh] {
+    cursor: pointer;
+    font-size: 2em;
+}
+
+article[b-2hsj6j6moh] {
+    text-align: center;
+    min-height: 4em;
+}
+
+.alert-danger[b-2hsj6j6moh] {
+    display: block;
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.alert-info[b-2hsj6j6moh] {
+    display: block;
+    margin-top: 0.5em;
+}
+
+/* =========================================
+   CONNECT FOUR BOARD
+   ========================================= */
+
+div[b-2hsj6j6moh] {
+    position: relative;
+}
+
+.board[b-2hsj6j6moh] {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(7, 4em);
+    grid-template-rows: repeat(6, 4em);
+
+    width: 30em;
+    height: 26em;
+
+    margin: 0 auto;
+    padding: 1em;
+
+    box-sizing: border-box;
+
+    background-color: var(--board-bg);
+    border-radius: 1em;
+}
+
+/* =========================================
+   EMPTY BOARD CIRCLES
+   ========================================= */
+
+.container[b-2hsj6j6moh] {
+    width: 4em;
+    height: 4em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+}
+
+.container > span[b-2hsj6j6moh] {
+    width: 3em;
+    height: 3em;
+
+    display: block;
+
+    border-radius: 50%;
+    background-color: white;
+}
+
+/* =========================================
+   PLAYER PIECES
+   ========================================= */
+
+.player1[b-2hsj6j6moh],
+.player2[b-2hsj6j6moh] {
+    position: absolute;
+
+    width: 3em;
+    height: 3em;
+
+    border-radius: 50%;
+
+    z-index: 2;
+}
+
+.player1[b-2hsj6j6moh] {
+    background-color: var(--player1);
+}
+
+.player2[b-2hsj6j6moh] {
+    background-color: var(--player2);
+}
+
+/* =========================================
+   COLUMN POSITIONING
+   ========================================= */
+
+.col0[b-2hsj6j6moh] {
+    left: 1.5em;
+}
+
+.col1[b-2hsj6j6moh] {
+    left: 5.5em;
+}
+
+.col2[b-2hsj6j6moh] {
+    left: 9.5em;
+}
+
+.col3[b-2hsj6j6moh] {
+    left: 13.5em;
+}
+
+.col4[b-2hsj6j6moh] {
+    left: 17.5em;
+}
+
+.col5[b-2hsj6j6moh] {
+    left: 21.5em;
+}
+
+.col6[b-2hsj6j6moh] {
+    left: 25.5em;
+}
+
+/* =========================================
+   ROW POSITIONING
+   ========================================= */
+
+.drop1[b-2hsj6j6moh] {
+    top: 1.5em;
+}
+
+.drop2[b-2hsj6j6moh] {
+    top: 5.5em;
+}
+
+.drop3[b-2hsj6j6moh] {
+    top: 9.5em;
+}
+
+.drop4[b-2hsj6j6moh] {
+    top: 13.5em;
+}
+
+.drop5[b-2hsj6j6moh] {
+    top: 17.5em;
+}
+
+.drop6[b-2hsj6j6moh] {
+    top: 21.5em;
+}
+
+/* =========================================
+   DROP ANIMATIONS
+   ========================================= */
+
+.drop1[b-2hsj6j6moh] {
+    animation: drop1-b-2hsj6j6moh 0.5s ease-in;
+}
+
+.drop2[b-2hsj6j6moh] {
+    animation: drop2-b-2hsj6j6moh 0.5s ease-in;
+}
+
+.drop3[b-2hsj6j6moh] {
+    animation: drop3-b-2hsj6j6moh 0.5s ease-in;
+}
+
+.drop4[b-2hsj6j6moh] {
+    animation: drop4-b-2hsj6j6moh 0.5s ease-in;
+}
+
+.drop5[b-2hsj6j6moh] {
+    animation: drop5-b-2hsj6j6moh 0.5s ease-in;
+}
+
+.drop6[b-2hsj6j6moh] {
+    animation: drop6-b-2hsj6j6moh 0.5s ease-in;
+}
+
+/* =========================================
+   ANIMATION KEYFRAMES
+   ========================================= */
+
+@keyframes drop1-b-2hsj6j6moh {
+    from {
+        top: -24em;
+    }
+
+    to {
+        top: 1.5em;
+    }
+}
+
+@keyframes drop2-b-2hsj6j6moh {
+    from {
+        top: -24em;
+    }
+
+    to {
+        top: 5.5em;
+    }
+}
+
+@keyframes drop3-b-2hsj6j6moh {
+    from {
+        top: -24em;
+    }
+
+    to {
+        top: 9.5em;
+    }
+}
+
+@keyframes drop4-b-2hsj6j6moh {
+    from {
+        top: -24em;
+    }
+
+    to {
+        top: 13.5em;
+    }
+}
+
+@keyframes drop5-b-2hsj6j6moh {
+    from {
+        top: -24em;
+    }
+
+    to {
+        top: 17.5em;
+    }
+}
+
+@keyframes drop6-b-2hsj6j6moh {
+    from {
+        top: -24em;
+    }
+
+    to {
+        top: 21.5em;
+    }
+}
+
+/* =========================================
+   MOVE HISTORY - ADDITIONAL FEATURE
+   ========================================= */
+
 .move-history[b-2hsj6j6moh] {
-    width: min(100%, 500px);
-    margin: 30px auto;
-    padding: 20px;
-    border-radius: 10px;
-    background: #f5f5f5;
+    width: 30em;
+    margin: 2em auto 2em auto;
+    padding: 1.5em;
+
+    box-sizing: border-box;
+
+    background-color: #f8f9fa;
+    border-radius: 1em;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    /* Center the contents vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .move-history h2[b-2hsj6j6moh] {
-    margin-top: 0;
+    margin: 0 0 1em 0;
+    text-align: center;
+}
+
+.move-history p[b-2hsj6j6moh] {
+    margin: 0;
+    text-align: center;
+    color: #666;
 }
 
 .move-history ol[b-2hsj6j6moh] {
     margin: 0;
-    padding-left: 25px;
+    padding-left: 2em;
 }
 
 .move-history li[b-2hsj6j6moh] {
-    margin-bottom: 6px;
+    margin-bottom: 0.5em;
+    padding: 0.4em;
 }
 /* /Components/Layout/MainLayout.razor.rz.scp.css */
 .page[b-dzoor4i9v5] {

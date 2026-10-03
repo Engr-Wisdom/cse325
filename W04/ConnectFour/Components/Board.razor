@@ -15,63 +15,103 @@
     @for (byte i = 0; i < 7; i++)
     {
         var col = i;
-        <span title="Click to play a piece" @onclick="() => PlayPiece(col)">🔽</span>
+
+        <span title="Click to play a piece"
+              @onclick="() => PlayPiece(col)">🔽</span>
     }
 </nav>
 
 <article>
     @winnerMessage
-    <button style="@ResetStyle" @onclick="ResetGame">Reset the game</button>
+
+    <button style="@ResetStyle" @onclick="ResetGame">
+        Reset the game
+    </button>
+
     <br />
+
     <span class="alert-danger">@errorMessage</span>
     <span class="alert-info">@CurrentTurn</span>
 </article>
 
-<div class="board">
-    @for (var i = 0; i < 42; i++)
-    {
-        <span class="container">
+<div class="game-container">
+
+    <div class="board">
+
+        @* Empty white circles *@
+        @for (var i = 0; i < 42; i++)
+        {
+            <span class="container">
+                <span></span>
+            </span>
+        }
+
+        @* Player pieces *@
+        @for (var i = 0; i < 42; i++)
+        {
             <span class="@pieces[i]"></span>
-        </span>
-    }
+        }
+
+    </div>
+
 </div>
 
-@if (moveHistory.Count > 0)
-{
-    <div class="move-history">
-        <h2>Move History</h2>
+@* =========================================
+   MOVE HISTORY - ADDITIONAL FEATURE
+   ========================================= *@
 
+<div class="move-history">
+    <h2>Move History</h2>
+
+    @if (moveHistory.Count == 0)
+    {
+        <p>No moves have been made yet.</p>
+    }
+    else
+    {
         <ol>
             @foreach (var move in moveHistory)
             {
-                <li>@move</li>
+                <li>
+                    Player @move.Player
+                    → Column @move.Column
+                    → Row @move.Row
+                </li>
             }
         </ol>
-    </div>
-}
+    }
+</div>
 
 @code {
     private string[] pieces = new string[42];
+
     private string winnerMessage = string.Empty;
     private string errorMessage = string.Empty;
-    private List<string> moveHistory = new();
+
+    // Stores all moves made during the current game.
+    private List<Move> moveHistory = new();
 
     [Parameter]
-    public Color BoardColor { get; set; } = ColorTranslator.FromHtml("yellow");
+    public Color BoardColor { get; set; } =
+        ColorTranslator.FromHtml("yellow");
 
     [Parameter]
-    public Color Player1Color { get; set; } = ColorTranslator.FromHtml("red");
+    public Color Player1Color { get; set; } =
+        ColorTranslator.FromHtml("red");
 
     [Parameter]
-    public Color Player2Color { get; set; } = ColorTranslator.FromHtml("blue");
+    public Color Player2Color { get; set; } =
+        ColorTranslator.FromHtml("blue");
 
-    private string CurrentTurn => (winnerMessage == string.Empty)
-        ? $"Player {State.PlayerTurn}'s Turn"
-        : "";
+    private string CurrentTurn =>
+        winnerMessage == string.Empty
+            ? $"Player {State.PlayerTurn}'s Turn"
+            : "";
 
-    private string ResetStyle => (winnerMessage == string.Empty)
-        ? "display: none;"
-        : "";
+    private string ResetStyle =>
+        winnerMessage == string.Empty
+            ? "display: none;"
+            : "";
 
     protected override void OnInitialized()
     {
@@ -86,10 +126,21 @@
         {
             var player = State.PlayerTurn;
             var turn = State.CurrentTurn;
+
+            // Play the piece and get the row where it landed.
             var landingRow = State.PlayPiece(col);
 
-            pieces[turn] = $"player{player} col{col} drop{landingRow}";
-            moveHistory.Add($"Player {player} → Column {col + 1}");
+            // Display the piece on the board.
+            pieces[turn] =
+                $"player{player} col{col} drop{landingRow}";
+
+            // Add the successful move to Move History.
+            moveHistory.Add(new Move
+            {
+                Player = player,
+                Column = col + 1,
+                Row = landingRow
+            });
         }
         catch (ArgumentException ex)
         {
@@ -108,9 +159,23 @@
     private void ResetGame()
     {
         State.ResetBoard();
+
         winnerMessage = string.Empty;
         errorMessage = string.Empty;
+
         pieces = new string[42];
+
+        // Clear Move History when starting a new game.
         moveHistory.Clear();
+    }
+
+    // Represents one move made by a player.
+    private class Move
+    {
+        public int Player { get; set; }
+
+        public int Column { get; set; }
+
+        public int Row { get; set; }
     }
 }
